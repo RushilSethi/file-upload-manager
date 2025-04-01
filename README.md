@@ -1,6 +1,8 @@
 # 📂 **File Manager with React & Appwrite**  
 A sleek and responsive file management app built with **ReactJS** and powered by **Appwrite** for file storage. The app allows users to upload, view, and download files with a clean, interactive interface — complete with emoji-based file type indicators. 😎  
 
+### 🚀 **Live Demo:** [File Nest](https://file-nest.netlify.app/) – Try it out now! 🎉
+
 ---
 
 ## 🎨 **Features**
