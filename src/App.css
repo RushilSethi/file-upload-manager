@@ -2,177 +2,273 @@
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
   background-color: #121212;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ddd;
 }
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   background-color: #1e1e1e;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: min(80px, 20vw);
+  height: auto;
+  stroke: white;
+  fill: none;
+}
+
+.logo-text {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-text {
   text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
 }
 
 .file-upload-wrapper {
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto 15px;
-  padding: 20px;
-  border: 2px dashed #4caf50;
-  border-radius: 10px;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  padding: 25px;
+  border: 2.5px dashed #4caf50;
+  border-radius: 12px;
   background-color: #252525;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .file-upload-wrapper:hover {
   border-style: solid;
-  box-shadow: 0 0 10px #4caf50;
+  box-shadow: 0 0 16px #4caf50;
 }
 
-input[type="file"] {
-  padding: 10px;
+input[type='file'] {
   background-color: transparent;
   color: #fff;
   border: none;
   outline: none;
   width: 100%;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: #fff;
+.expiry-wrapper {
+  max-width: 200px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+select {
+  padding: 8px 10px;
+  border-radius: 6px;
   border: none;
-  border-radius: 5px;
+  background-color: #333;
+  color: #eee;
   cursor: pointer;
-  margin-top: 10px;
+  font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+select:hover,
+select:focus {
+  background-color: #4caf50;
+  color: #121212;
+}
+
+.upload-btn {
+  display: block;
+  margin: 0 auto 30px;
+  padding: 12px 30px;
+  background-color: #4caf50;
+  color: #121212;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.upload-btn:hover:not(:disabled) {
   background-color: #45a049;
+}
+
+.upload-btn:disabled {
+  background-color: #2a2a2a;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.uploaded-files-wrapper h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4caf50;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 thead tr {
   background-color: #333;
-  color: #4caf50;
-  text-align: left;
+  color: #ddd;
+}
+
+tbody tr {
+  background-color: #222;
+  color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+/* Updated hover effect to subtle gray */
+tbody tr:hover {
+  background-color: #444; /* subtle gray */
+  color: #ddd;
 }
 
 th,
 td {
-  padding: 12px;
-  border-bottom: 1px solid #444;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #252525;
-}
-
-a {
-  color: #4caf50;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 1200px) {
-  #root {
-    padding: 1.5rem;
-  }
-
-  .container {
-    width: 95%;
-    padding: 20px;
-  }
-
-  .file-upload-wrapper {
-    width: 100%;
-  }
-
-  input[type="file"],
-  button {
-    width: 100%;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 768px) {
-  #root {
-    padding: 1rem;
-  }
-
-  .container {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .file-upload-wrapper {
-    width: 100%;
-  }
-
-  input[type="file"],
-  button {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .action-btn {
-  background-color: #333;
+  background: none;
+  border: none;
   color: #4caf50;
-  padding: 5px 10px;
-  margin: 2px;
-  border: 1px solid #4caf50;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 6px;
+  transition: color 0.3s ease;
 }
 
 .action-btn:hover {
-  background-color: #4caf50;
-  color: #fff;
+  color: #81c784;
 }
 
 .delete-btn {
-  border-color: #e53935;
-  color: #e53935;
+  color: #f44336;
 }
 
 .delete-btn:hover {
-  background-color: #e53935;
-  color: #fff;
+  color: #e57373;
+}
+
+.expired {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.expired-text {
+  color: #f44336;
+  font-weight: 700;
+}
+
+/* Responsive styling */
+@media (max-width: 700px) {
+  .container {
+    background-color: #121212;
+    box-shadow: none;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    box-shadow: none;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tbody tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #444; /* subtle border around cards */
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    background-color: #222;
+    color: #ccc;
+    transition: background-color 0.3s ease;
+    text-align: center; /* center text in cards */
+  }
+
+  /* subtle hover on cards */
+  tbody tr:hover {
+    background-color: #333;
+    color: #ddd;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 0;
+    text-align: center; /* center text */
+    font-size: 0.9rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  td::before {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #4caf50;
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+    content: attr(data-label);
+  }
 }
